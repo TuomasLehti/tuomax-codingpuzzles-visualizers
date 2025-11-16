@@ -1,8 +1,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 600px;
 }
 
 canvas {
   display: block;
+}
+
+h1, h2 {
+  font-family: sans-serif;
 }

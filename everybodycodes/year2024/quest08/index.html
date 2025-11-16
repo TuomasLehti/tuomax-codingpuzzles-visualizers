@@ -12,16 +12,35 @@
   </head>
 
   <body>
-    <h1>Everybody Codes 2025: The Song of Ducks and Dragons</h1>
+    <h1>The Song of Ducks and Dragons (2025)</h1>
     
     <h2>Quest 8: The Art of Connection</h2>
-      <table>
+
+    <p>This is a little visualizer for the eighth quest of
+    <a href="https://everybody.codes/event/2025/quests">the 2025 event</a> of 
+    <a href="https://everybody.codes/home">Everybody Codes</a>.</p>
+
+    <p>Everybody Codes is a set of programming problems, puzzles, challenges,
+    whatever you want to call them. Visit the site to get a better picture of 
+    what it's all about. You can approach it from the perspective of fun
+    and learning, but there is a competitive element as well, if you wish to
+    compare your solving times with others. That's why I haven't given a
+    direct link to the actual puzzle: the clock starts ticking as soon as 
+    you open one...</p>
+
+    <table>
       <tr>
-        <td>Your puzzle input goes here</td>
-        <td><input type="text" id="ecinput" name="ecinput" value=""></td>
+        <td>
+          Your puzzle input goes here
+        </td>
+        <td>
+          <input type="text" id="ecinput" name="ecinput" value="">
+        </td>
       </tr>
       <tr>
-        <td>Animation speed</td>
+        <td>
+          Animation speed
+        </td>
         <td>
           <select id="speed" name="speed">
             <option value="1">1x</option>
@@ -33,18 +52,29 @@
         </td>
       </tr>
       <tr>
-        <td>Line color</td>
-        <td><input type="text" id="fgcolor" name="fgcolor" value="#000000"></td>
+        <td>
+          Line color
+        </td>
+        <td>
+          <input type="text" id="fgcolor" name="fgcolor" value="#000000">
+        </td>
       </tr>
       <tr>
-        <td>Background color</td>
-        <td><input type="text" id="bgcolor" name="bgcolor" value="#DDDDDD"></td>
+        <td>
+          Background color
+        </td>
+        <td>
+          <input type="text" id="bgcolor" name="bgcolor" value="#DDDDDD">
+        </td>
       </tr>
       <tr>
-        <td><button type="button" onclick="resetSketch()">Start</button></td>
+        <td>
+          <button type="button" onclick="resetSketch()">Start</button>
+        </td>
       </tr>
     </table>
 
     <script src="sketch.js"></script>
+
   </body>
 </html>
