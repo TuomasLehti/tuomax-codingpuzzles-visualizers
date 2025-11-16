@@ -6,44 +6,46 @@ const ARTWORK_RADIUS = ARTWORK_DIAMETER / 2;
 
 function setup() {
   createCanvas(400, 400);
-//  frameRate(16);
   resetSketch();
-//  translate(width / 2, height / 2);
-//  drawNails();
 }
 
 let nails;
-let nailIdx = 0;
+let nailIdx;
+let speed;
+let lineColor;
+let canvasColor;
 
 function resetSketch()
 {
-  background(255);
   parseInput();
+  getSpeed();
+  getFgColor();
+  getBgColor();
   nailIdx = 0;
+  background(canvasColor);
+  if (nails.length < 2) {
+    noLoop();
+  } else {
+    loop();
+  }
 }
-
 
 function draw() {
   translate(width / 2, height / 2);
-  drawSpan(nails[nailIdx], nails[nailIdx + 1]);
-  nailIdx++;
-  if (nailIdx == nails.length - 1) {
-    noLoop();
-    console.log("Done.");
-  }
-  drawSpan(nails[nailIdx], nails[nailIdx + 1]);
-  nailIdx++;
-  if (nailIdx == nails.length - 1) {
-    noLoop();
-    console.log("Done.");
+  for (let i = 0; i < speed; i++) {
+    drawSpan(nails[nailIdx], nails[nailIdx + 1]);
+    nailIdx++;
+    if (nailIdx == nails.length - 1) {
+      noLoop();
+    }
   }
 }
 
 function drawSpan(fromNailIdx, toNailIdx) {
   let fromCoords = nailIdxToCoords(fromNailIdx);
   let toCoords = nailIdxToCoords(toNailIdx);
-  stroke(0, 0, 128, 24);
-  fill(0, 0, 128, 24);
+  stroke(lineColor);
+  fill(lineColor);
   strokeWeight(1);
   line(fromCoords.x, fromCoords.y, toCoords.x, toCoords.y);
 }
@@ -63,3 +65,15 @@ function parseInput() {
   return nails;
 }
 
+function getSpeed() {
+  speed = Number(document.getElementById("speed").value);
+}
+
+function getFgColor() {
+  lineColor = color(document.getElementById("fgcolor").value);
+  lineColor.setAlpha(20);
+}
+
+function getBgColor() {
+  canvasColor = color(document.getElementById("bgcolor").value);
+}

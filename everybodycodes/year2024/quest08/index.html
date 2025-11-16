@@ -15,12 +15,36 @@
     <h1>Everybody Codes 2025: The Song of Ducks and Dragons</h1>
     
     <h2>Quest 8: The Art of Connection</h2>
-    <p>
-      Your puzzle input goes here:
-      <input type="text" id="ecinput" name="ecinput" value="">
-      <button type="button" onclick="resetSketch()">Start</button>
-    </p>
-    
+      <table>
+      <tr>
+        <td>Your puzzle input goes here</td>
+        <td><input type="text" id="ecinput" name="ecinput" value=""></td>
+      </tr>
+      <tr>
+        <td>Animation speed</td>
+        <td>
+          <select id="speed" name="speed">
+            <option value="1">1x</option>
+            <option value="2">2x</option>
+            <option value="4">4x</option>
+            <option value="8" selected="selected">8x</option>
+            <option value="16">16x</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Line color</td>
+        <td><input type="text" id="fgcolor" name="fgcolor" value="#000000"></td>
+      </tr>
+      <tr>
+        <td>Background color</td>
+        <td><input type="text" id="bgcolor" name="bgcolor" value="#DDDDDD"></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="resetSketch()">Start</button></td>
+      </tr>
+    </table>
+
     <script src="sketch.js"></script>
   </body>
 </html>
